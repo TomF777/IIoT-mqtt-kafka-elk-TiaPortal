@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Process Data Inputs - Temperature" Datatype="Int" />
+    <Member Name="Process Data Inputs - Temperature Alarm High" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Temperature Range High" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Temperature Range Low" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Temperature Alarm Low" Datatype="Bool" />
+    <Member Name="Reserved Bit" Datatype="Bool" />
+    <Member Name="Reserved Bit_1" Datatype="Bool" />
+    <Member Name="Reserved Bit_2" Datatype="Bool" />
+    <Member Name="Reserved Bit_3" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Humidity" Datatype="Int" />
+    <Member Name="Process Data Inputs - Humidity Alarm High" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Humidity Range High" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Humidity Range Low" Datatype="Bool" />
+    <Member Name="Process Data Inputs - Humidity Alarm Low" Datatype="Bool" />
+    <Member Name="Reserved Bit_4" Datatype="Bool" />
+    <Member Name="Reserved Bit_5" Datatype="Bool" />
+    <Member Name="Reserved Bit_6" Datatype="Bool" />
+    <Member Name="Reserved Bit_7" Datatype="Bool" />
+    <Member Name="Reserved Byte" Datatype="Bool" />
+    <Member Name="Reserved Byte_1" Datatype="Bool" />
+    <Member Name="Reserved Byte_2" Datatype="Bool" />
+    <Member Name="Reserved Byte_3" Datatype="Bool" />
+    <Member Name="Reserved Byte_4" Datatype="Bool" />
+    <Member Name="Reserved Byte_5" Datatype="Bool" />
+    <Member Name="Reserved Byte_6" Datatype="Bool" />
+    <Member Name="Reserved Byte_7" Datatype="Bool" />
+    <Member Name="Reserved Byte_8" Datatype="Bool" />
+    <Member Name="Reserved Byte_9" Datatype="Bool" />
+    <Member Name="Reserved Byte_10" Datatype="Bool" />
+    <Member Name="Reserved Byte_11" Datatype="Bool" />
+    <Member Name="Reserved Byte_12" Datatype="Bool" />
+    <Member Name="Reserved Byte_13" Datatype="Bool" />
+    <Member Name="Reserved Byte_14" Datatype="Bool" />
+    <Member Name="Reserved Byte_15" Datatype="Bool" />
+    <Member Name="Reserved Byte_16" Datatype="Bool" />
+    <Member Name="Reserved Byte_17" Datatype="Bool" />
+    <Member Name="Reserved Byte_18" Datatype="Bool" />
+    <Member Name="Reserved Byte_19" Datatype="Bool" />
+    <Member Name="Reserved Byte_20" Datatype="Bool" />
+    <Member Name="Reserved Byte_21" Datatype="Bool" />
+    <Member Name="Reserved Byte_22" Datatype="Bool" />
+    <Member Name="Reserved Byte_23" Datatype="Bool" />
+    <Member Name="Reserved Byte_24" Datatype="Bool" />
+    <Member Name="Reserved Byte_25" Datatype="Bool" />
+    <Member Name="Port qualifier" Datatype="Byte" />
+  </Section>
+</Sections></Interface>
+      <Name>PII - CSS 01411.2-xx</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

@@ -1,0 +1,122 @@
+﻿FUNCTION_BLOCK "PublishJsonMqtt"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      HostAddress : String;
+      HostPort : UInt;
+      UserName : WString;
+      UserPassword : WString[100];
+      MqttTopic : WString[100];
+      PublishCommand : Bool;
+      ClientId : WString;
+      ConnId : Word;
+   END_VAR
+
+   VAR_IN_OUT 
+      JsonPayload : Array[*] of "LStream_typeElement";   // mqtt payload as array of LStream elements
+   END_VAR
+
+   VAR 
+      MqttClientInstance : "LMQTT_Client";
+      SetParameter { S7_SetPoint := 'True'} : Bool := TRUE;
+      MqttControl : Struct
+         Enable : Bool;
+         "Retain" : Bool;
+         QoS : Int := 1;
+         Publish : Bool;
+         Subscribe : Bool;
+         Unsubscribe : Bool;
+         ConnParam { S7_SetPoint := 'False'} : "LMQTT_typeConnParam" := ((), (), '', 0, (), ());
+         ClientId { S7_SetPoint := 'True'} : WString := WSTRING#'';
+         User { S7_SetPoint := 'True'} : WString := WSTRING#'';
+         Password { S7_SetPoint := 'True'} : WString[500] := WSTRING#'';
+         WillTopic : WString;
+         WillMsg : Array[0..1023] of Byte;
+         Topic : WString[200] := WSTRING#'';
+         PublishMsg : Array[0..500] of Byte;
+         ReceivedTopic : WString;
+         ReceivedMsg : Array[0..999] of Byte;
+         ReceivedString : String;
+         Valid : Bool;
+         Done : Bool;
+         Busy : Bool;
+         Error : Bool;
+         Diagnostic : "typeDiagnostics";
+         Status : Word;
+         ReceivedMsgStatus : Byte;
+         ReceivedMsgDataLen : DWord;
+      END_STRUCT;
+      LStreamJsonSerializerInst : "LStream_JsonSerializer";
+      LStreamSerializer : Struct
+         Done : Bool;
+         Error : Bool;
+         Status : Word;
+         ResultCount : UInt;
+      END_STRUCT;
+      JsonBytePayload : Array[0..500] of Byte;
+      rtrigPublishCmd {InstructionName := 'R_TRIG'; LibVersion := '1.0'} : R_TRIG;
+   END_VAR
+
+   VAR_TEMP 
+      RetVal : Int;
+   END_VAR
+
+
+BEGIN
+	IF #SetParameter=TRUE THEN
+	    #SetParameter := FALSE;
+	    #MqttControl.Topic := #MqttTopic;
+	    #MqttControl.ConnParam.broker := #HostAddress;
+	    #MqttControl.ConnParam."port" := #HostPort;
+	    #MqttControl.ConnParam.connId := #ConnId;
+	    #MqttControl.User := #UserName;
+	    #MqttControl.Password := #UserPassword;
+	    #MqttControl.ClientId := #ClientId;
+	END_IF;
+	
+	#rtrigPublishCmd(CLK:=#PublishCommand);
+	
+	
+	// convert from data objects(array of key-value obejcts) into a compressed JSON data stream (array of bytes)
+	#LStreamJsonSerializerInst(execute:=#rtrigPublishCmd.Q ,
+	                                 done=>#LStreamSerializer.Done,
+	                                 error=>#LStreamSerializer.Error,
+	                                 status=>#LStreamSerializer.Status,
+	                                 count=>#LStreamSerializer.ResultCount,
+	                                 tree:=#JsonPayload,
+	                                 jsonByteArray:=#JsonBytePayload);
+	
+	#MqttControl.PublishMsg := #JsonBytePayload;
+	
+	// mqtt client instance
+	#MqttClientInstance(enable:=true,
+	                       publish:=#LStreamSerializer.Done,
+	                       subscribe:=false,
+	                       unsubscribe:=false,
+	                       qos:=1,
+	                       retain:=false,
+	                       publishMsgLen:=UINT_TO_UDINT(#LStreamSerializer.ResultCount),
+	                       willMsgLen:=0,
+	                       timeOut:=T#5s,
+	                       connParam:=#MqttControl.ConnParam,
+	                       clientIdentifier:=#MqttControl.ClientId,
+	                       username := #MqttControl.User,
+	                       password := #MqttControl.Password,
+	                       willtopic:=#MqttControl.WillTopic,
+	                       willMsgPayload:=#MqttControl.WillMsg,
+	                       mqttTopic:=#MqttTopic,
+	                       publishMsgPayload:=#JsonBytePayload,
+	                       receivedTopic:=#MqttControl.ReceivedTopic,
+	                       receivedMsgPayload:=#MqttControl.ReceivedMsg,
+	                       valid=>#MqttControl.Valid,
+	                       done=>#MqttControl.Done,
+	                       busy=>#MqttControl.Busy,
+	                       error=>#MqttControl.Error,
+	                       status=>#MqttControl.Status,
+	                       diagnostics=>#MqttControl.Diagnostic,
+	                       receivedMsgStatus=>#MqttControl.ReceivedMsgStatus,
+	                       receivedMsgDataLen=>#MqttControl.ReceivedMsgDataLen
+	                        );
+	
+END_FUNCTION_BLOCK
+

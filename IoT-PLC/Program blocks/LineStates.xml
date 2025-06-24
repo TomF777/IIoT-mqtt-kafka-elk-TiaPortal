@@ -1,0 +1,1140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="StateM1LineRunning" Datatype="&quot;GenericState&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="StateM2LineRunning" Datatype="&quot;GenericState&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="StateM1CurrentOrderNo" Datatype="&quot;GenericState&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="StateM2CurrentOrderNo" Datatype="&quot;GenericState&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInstM1LineRunning" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInstM2LineRunning" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInstM1CurrentOrderNo" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInstM2CurrentOrderNo" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen01" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen02" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>LineStates</Name>
+      <Namespace />
+      <Number>8</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="tpGen01" UId="23" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="24">
+    <Instruction UId="25">
+      <Token Text="(" UId="26" />
+      <Parameter Name="IN" UId="27">
+        <Token Text=":=" UId="28" />
+        <Token Text="NOT" UId="29" />
+        <Blank UId="30" />
+        <Access Scope="LocalVariable" UId="31">
+          <Symbol UId="32">
+            <Component Name="tpGen02" UId="33" />
+            <Token Text="." UId="34" />
+            <Component Name="Q" UId="35" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="36" />
+      <NewLine UId="37" />
+      <Blank Num="9" UId="38" />
+      <Parameter Name="PT" UId="39">
+        <Token Text=":=" UId="40" />
+        <Access Scope="TypedConstant" UId="41">
+          <Constant UId="42">
+            <ConstantValue UId="43">T#4S</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="44" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="45" />
+  <NewLine Num="2" UId="46" />
+  <Access Scope="LocalVariable" UId="47">
+    <Symbol UId="48">
+      <Component Name="tpGen02" UId="49" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="50">
+    <Instruction UId="51">
+      <Token Text="(" UId="52" />
+      <Parameter Name="IN" UId="53">
+        <Token Text=":=" UId="54" />
+        <Token Text="NOT" UId="55" />
+        <Blank UId="56" />
+        <Access Scope="LocalVariable" UId="57">
+          <Symbol UId="58">
+            <Component Name="tpGen01" UId="59" />
+            <Token Text="." UId="60" />
+            <Component Name="Q" UId="61" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="62" />
+      <NewLine UId="63" />
+      <Blank Num="9" UId="64" />
+      <Parameter Name="PT" UId="65">
+        <Token Text=":=" UId="66" />
+        <Access Scope="TypedConstant" UId="67">
+          <Constant UId="68">
+            <ConstantValue UId="69">T#100MS</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="70" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="71" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Generator for data publish</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'LineRunning'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State11" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="StateM1LineRunning" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="StateM1LineRunning" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="33">
+      <Constant>
+        <ConstantValue>WSTRING#'Client10'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="34">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>10</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="StateM1LineRunning" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Call UId="36">
+      <CallInfo Name="GenericState" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="37">
+          <Component Name="StateM1LineRunning" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="StateName" Section="Input" Type="String" />
+        <Parameter Name="StateValue" Section="Input" Type="UInt" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="38">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="39">
+          <Component Name="PubJsonMqttInstM1LineRunning" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="21" />
+      <NameCon UId="36" Name="LineName" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="MachineName" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="StateName" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="24" />
+      <NameCon UId="36" Name="StateValue" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="Timestamp" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="26" />
+      <NameCon UId="36" Name="Enable" />
+    </Wire>
+    <Wire UId="50">
+      <NameCon UId="36" Name="eno" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="36" Name="MqttTopic" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="36" Name="MqttJsonPayload" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="36" Name="PublishMqtt" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="HostAddress" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="HostPort" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="29" />
+      <NameCon UId="38" Name="UserName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="30" />
+      <NameCon UId="38" Name="UserPassword" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="38" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="38" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="38" Name="ClientId" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="34" />
+      <NameCon UId="38" Name="ConnId" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="35" />
+      <NameCon UId="38" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 1 / State 'LineRunning'</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'CurrentOrderNo'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State12" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="StateM1CurrentOrderNo" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="StateM1CurrentOrderNo" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="33">
+      <Constant>
+        <ConstantValue>WSTRING#'Client11'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="34">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>11</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="StateM1CurrentOrderNo" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Call UId="36">
+      <CallInfo Name="GenericState" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="37">
+          <Component Name="StateM1CurrentOrderNo" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="StateName" Section="Input" Type="String" />
+        <Parameter Name="StateValue" Section="Input" Type="UInt" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="38">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="39">
+          <Component Name="PubJsonMqttInstM1CurrentOrderNo" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="21" />
+      <NameCon UId="36" Name="LineName" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="MachineName" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="StateName" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="24" />
+      <NameCon UId="36" Name="StateValue" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="Timestamp" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="26" />
+      <NameCon UId="36" Name="Enable" />
+    </Wire>
+    <Wire UId="50">
+      <NameCon UId="36" Name="eno" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="36" Name="MqttTopic" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="36" Name="MqttJsonPayload" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="36" Name="PublishMqtt" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="HostAddress" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="HostPort" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="29" />
+      <NameCon UId="38" Name="UserName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="30" />
+      <NameCon UId="38" Name="UserPassword" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="38" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="38" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="38" Name="ClientId" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="34" />
+      <NameCon UId="38" Name="ConnId" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="35" />
+      <NameCon UId="38" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 1 / State 'CurrentOrderNo'</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'LineRunning'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State21" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="StateM2LineRunning" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="StateM2LineRunning" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="33">
+      <Constant>
+        <ConstantValue>WSTRING#'Client12'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="34">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>12</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="StateM2LineRunning" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Call UId="36">
+      <CallInfo Name="GenericState" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="37">
+          <Component Name="StateM2LineRunning" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="StateName" Section="Input" Type="String" />
+        <Parameter Name="StateValue" Section="Input" Type="UInt" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="38">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="39">
+          <Component Name="PubJsonMqttInstM2LineRunning" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="21" />
+      <NameCon UId="36" Name="LineName" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="MachineName" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="StateName" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="24" />
+      <NameCon UId="36" Name="StateValue" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="Timestamp" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="26" />
+      <NameCon UId="36" Name="Enable" />
+    </Wire>
+    <Wire UId="50">
+      <NameCon UId="36" Name="eno" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="36" Name="MqttTopic" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="36" Name="MqttJsonPayload" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="36" Name="PublishMqtt" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="HostAddress" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="HostPort" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="29" />
+      <NameCon UId="38" Name="UserName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="30" />
+      <NameCon UId="38" Name="UserPassword" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="38" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="38" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="38" Name="ClientId" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="34" />
+      <NameCon UId="38" Name="ConnId" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="35" />
+      <NameCon UId="38" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 2 / State 'LineRunning'</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'CurrentOrderNo'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State22" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="StateM2CurrentOrderNo" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="StateM2CurrentOrderNo" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="33">
+      <Constant>
+        <ConstantValue>WSTRING#'Client13'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="34">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>13</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="StateM2CurrentOrderNo" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Call UId="36">
+      <CallInfo Name="GenericState" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="37">
+          <Component Name="StateM2CurrentOrderNo" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="StateName" Section="Input" Type="String" />
+        <Parameter Name="StateValue" Section="Input" Type="UInt" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="38">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="39">
+          <Component Name="PubJsonMqttInstM2CurrentOrderNo" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="21" />
+      <NameCon UId="36" Name="LineName" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="MachineName" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="StateName" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="24" />
+      <NameCon UId="36" Name="StateValue" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="Timestamp" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="26" />
+      <NameCon UId="36" Name="Enable" />
+    </Wire>
+    <Wire UId="50">
+      <NameCon UId="36" Name="eno" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="36" Name="MqttTopic" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="36" Name="MqttJsonPayload" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="36" Name="PublishMqtt" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="HostAddress" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="HostPort" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="29" />
+      <NameCon UId="38" Name="UserName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="30" />
+      <NameCon UId="38" Name="UserPassword" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="31" />
+      <NameCon UId="38" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="32" />
+      <NameCon UId="38" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="38" Name="ClientId" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="34" />
+      <NameCon UId="38" Name="ConnId" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="35" />
+      <NameCon UId="38" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 2 / State 'CurrentOrderNo'</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="1C" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="1D" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

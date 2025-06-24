@@ -1,0 +1,1574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="LGF_Error" Datatype="Array[1..10] of Bool" />
+    <Member Name="LGF_Status" Datatype="Array[1..10] of Word" />
+    <Member Name="RetValReal" Datatype="Real" />
+  </Section>
+  <Section Name="Temp">
+    <Member Name="RndDIntStatus" Datatype="Array[1..10] of Word" />
+    <Member Name="RndRealStatus" Datatype="Array[1..10] of Word" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>Simulation</Name>
+      <Namespace />
+      <Number>1</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>5.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="RndRealStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>13.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor11" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="30">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>-3.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>3.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="RndRealStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="37">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>10.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="38">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor12" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="39">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>8.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="40">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>25.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>3</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>3</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="RndRealStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>3</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="46">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>20.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="47">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor13" />
+      </Symbol>
+    </Access>
+    <Call UId="48">
+      <CallInfo Name="LGF_RandomRange_Real" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="Real" />
+        <Parameter Name="maxValue" Section="Input" Type="Real" />
+        <Parameter Name="Ret_Val" Section="Return" Type="Real" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="49" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Call UId="50">
+      <CallInfo Name="LGF_RandomRange_Real" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="Real" />
+        <Parameter Name="maxValue" Section="Input" Type="Real" />
+        <Parameter Name="Ret_Val" Section="Return" Type="Real" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="51" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Call UId="52">
+      <CallInfo Name="LGF_RandomRange_Real" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="Real" />
+        <Parameter Name="maxValue" Section="Input" Type="Real" />
+        <Parameter Name="Ret_Val" Section="Return" Type="Real" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="53" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="54">
+      <Powerrail />
+      <NameCon UId="48" Name="en" />
+      <NameCon UId="52" Name="en" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="21" />
+      <NameCon UId="48" Name="minValue" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="22" />
+      <NameCon UId="48" Name="maxValue" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="48" Name="eno" />
+      <NameCon UId="49" Name="en" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="48" Name="Ret_Val" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="48" Name="error" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="48" Name="status" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="48" Name="subfunctionStatus" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="27" />
+      <NameCon UId="49" Name="in1" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="28" />
+      <NameCon UId="49" Name="in2" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="49" Name="eno" />
+      <NameCon UId="50" Name="en" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="49" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="30" />
+      <NameCon UId="50" Name="minValue" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="31" />
+      <NameCon UId="50" Name="maxValue" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="50" Name="eno" />
+      <NameCon UId="51" Name="en" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="50" Name="Ret_Val" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="50" Name="error" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="50" Name="status" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="50" Name="subfunctionStatus" />
+      <IdentCon UId="35" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="36" />
+      <NameCon UId="51" Name="in1" />
+    </Wire>
+    <Wire UId="74">
+      <IdentCon UId="37" />
+      <NameCon UId="51" Name="in2" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="51" Name="out" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="39" />
+      <NameCon UId="52" Name="minValue" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="40" />
+      <NameCon UId="52" Name="maxValue" />
+    </Wire>
+    <Wire UId="78">
+      <NameCon UId="52" Name="eno" />
+      <NameCon UId="53" Name="en" />
+    </Wire>
+    <Wire UId="79">
+      <NameCon UId="52" Name="Ret_Val" />
+      <IdentCon UId="41" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="52" Name="error" />
+      <IdentCon UId="42" />
+    </Wire>
+    <Wire UId="81">
+      <NameCon UId="52" Name="status" />
+      <IdentCon UId="43" />
+    </Wire>
+    <Wire UId="82">
+      <NameCon UId="52" Name="subfunctionStatus" />
+      <IdentCon UId="44" />
+    </Wire>
+    <Wire UId="83">
+      <IdentCon UId="45" />
+      <NameCon UId="53" Name="in1" />
+    </Wire>
+    <Wire UId="84">
+      <IdentCon UId="46" />
+      <NameCon UId="53" Name="in2" />
+    </Wire>
+    <Wire UId="85">
+      <NameCon UId="53" Name="out" />
+      <IdentCon UId="47" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Sensor simulation Machine 1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Access Scope="GlobalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="GlobalData" UId="23">
+        <BooleanAttribute Name="HasQuotes" UId="24">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="25" />
+      <Component Name="SensorsSimulation" UId="26" />
+      <Token Text="." UId="27" />
+      <Component Name="Sensors" UId="28" />
+      <Token Text="." UId="29" />
+      <Component Name="Sensor14" UId="30" />
+    </Symbol>
+  </Access>
+  <Blank UId="31" />
+  <Token Text=":=" UId="32" />
+  <Blank UId="33" />
+  <Access Scope="GlobalVariable" UId="34">
+    <Symbol UId="35">
+      <Component Name="GlobalData" UId="36">
+        <BooleanAttribute Name="HasQuotes" UId="37">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="38" />
+      <Component Name="SensorsSimulation" UId="39" />
+      <Token Text="." UId="40" />
+      <Component Name="Sensors" UId="41" />
+      <Token Text="." UId="42" />
+      <Component Name="Sensor14" UId="43" />
+    </Symbol>
+  </Access>
+  <Blank UId="44" />
+  <Token Text="+" UId="45" />
+  <Blank UId="46" />
+  <Access Scope="LiteralConstant" UId="47">
+    <Constant UId="48">
+      <ConstantValue UId="50">0.01</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="51" />
+  <NewLine Num="2" UId="52" />
+  <Token Text="IF" UId="53" />
+  <Blank UId="54" />
+  <Access Scope="GlobalVariable" UId="55">
+    <Symbol UId="56">
+      <Component Name="GlobalData" UId="57">
+        <BooleanAttribute Name="HasQuotes" UId="58">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="59" />
+      <Component Name="SensorsSimulation" UId="60" />
+      <Token Text="." UId="61" />
+      <Component Name="Sensors" UId="62" />
+      <Token Text="." UId="63" />
+      <Component Name="Sensor14" UId="64" />
+    </Symbol>
+  </Access>
+  <Blank UId="65" />
+  <Token Text="&gt;" UId="66" />
+  <Blank UId="67" />
+  <Access Scope="LiteralConstant" UId="68">
+    <Constant UId="69">
+      <ConstantValue UId="71">100</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="72" />
+  <Token Text="THEN" UId="73" />
+  <NewLine UId="74" />
+  <Blank Num="4" UId="75" />
+  <Access Scope="GlobalVariable" UId="76">
+    <Symbol UId="77">
+      <Component Name="GlobalData" UId="78">
+        <BooleanAttribute Name="HasQuotes" UId="79">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="80" />
+      <Component Name="SensorsSimulation" UId="81" />
+      <Token Text="." UId="82" />
+      <Component Name="Sensors" UId="83" />
+      <Token Text="." UId="84" />
+      <Component Name="Sensor14" UId="85" />
+    </Symbol>
+  </Access>
+  <Blank UId="86" />
+  <Token Text=":=" UId="87" />
+  <Blank UId="88" />
+  <Access Scope="LiteralConstant" UId="89">
+    <Constant UId="90">
+      <ConstantValue UId="92">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="93" />
+  <NewLine UId="94" />
+  <Token Text="END_IF" UId="95" />
+  <Token Text=";" UId="96" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Sensor simulation Machine 1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State11" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="RndDIntStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>5</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>25</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State12" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="RndDIntStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Call UId="33">
+      <CallInfo Name="LGF_RandomRange_DInt" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="DInt" />
+        <Parameter Name="maxValue" Section="Input" Type="DInt" />
+        <Parameter Name="Ret_Val" Section="Return" Type="DInt" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Call UId="34">
+      <CallInfo Name="LGF_RandomRange_DInt" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="DInt" />
+        <Parameter Name="maxValue" Section="Input" Type="DInt" />
+        <Parameter Name="Ret_Val" Section="Return" Type="DInt" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="33" Name="minValue" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="maxValue" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="33" Name="eno" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="33" Name="Ret_Val" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="33" Name="error" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="33" Name="status" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="33" Name="subfunctionStatus" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="27" />
+      <NameCon UId="34" Name="minValue" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="maxValue" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="Ret_Val" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="34" Name="error" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="34" Name="status" />
+      <IdentCon UId="31" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="34" Name="subfunctionStatus" />
+      <IdentCon UId="32" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Status simulation Machine 1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>3.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="RndRealStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>4.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor21" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="30">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>-5.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>5.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>5</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>5</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="RndRealStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>5</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="37">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>50.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="38">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor22" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="39">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>5.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="40">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>20.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>6</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>6</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="RndRealStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>6</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="RetValReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="46">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>35.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="47">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor23" />
+      </Symbol>
+    </Access>
+    <Call UId="48">
+      <CallInfo Name="LGF_RandomRange_Real" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="Real" />
+        <Parameter Name="maxValue" Section="Input" Type="Real" />
+        <Parameter Name="Ret_Val" Section="Return" Type="Real" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="49" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Call UId="50">
+      <CallInfo Name="LGF_RandomRange_Real" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="Real" />
+        <Parameter Name="maxValue" Section="Input" Type="Real" />
+        <Parameter Name="Ret_Val" Section="Return" Type="Real" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="51" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Call UId="52">
+      <CallInfo Name="LGF_RandomRange_Real" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="Real" />
+        <Parameter Name="maxValue" Section="Input" Type="Real" />
+        <Parameter Name="Ret_Val" Section="Return" Type="Real" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="53" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="54">
+      <Powerrail />
+      <NameCon UId="48" Name="en" />
+      <NameCon UId="52" Name="en" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="21" />
+      <NameCon UId="48" Name="minValue" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="22" />
+      <NameCon UId="48" Name="maxValue" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="48" Name="eno" />
+      <NameCon UId="49" Name="en" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="48" Name="Ret_Val" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="48" Name="error" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="48" Name="status" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="48" Name="subfunctionStatus" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="27" />
+      <NameCon UId="49" Name="in1" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="28" />
+      <NameCon UId="49" Name="in2" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="49" Name="eno" />
+      <NameCon UId="50" Name="en" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="49" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="30" />
+      <NameCon UId="50" Name="minValue" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="31" />
+      <NameCon UId="50" Name="maxValue" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="50" Name="eno" />
+      <NameCon UId="51" Name="en" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="50" Name="Ret_Val" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="50" Name="error" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="50" Name="status" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="50" Name="subfunctionStatus" />
+      <IdentCon UId="35" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="36" />
+      <NameCon UId="51" Name="in1" />
+    </Wire>
+    <Wire UId="74">
+      <IdentCon UId="37" />
+      <NameCon UId="51" Name="in2" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="51" Name="out" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="39" />
+      <NameCon UId="52" Name="minValue" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="40" />
+      <NameCon UId="52" Name="maxValue" />
+    </Wire>
+    <Wire UId="78">
+      <NameCon UId="52" Name="eno" />
+      <NameCon UId="53" Name="en" />
+    </Wire>
+    <Wire UId="79">
+      <NameCon UId="52" Name="Ret_Val" />
+      <IdentCon UId="41" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="52" Name="error" />
+      <IdentCon UId="42" />
+    </Wire>
+    <Wire UId="81">
+      <NameCon UId="52" Name="status" />
+      <IdentCon UId="43" />
+    </Wire>
+    <Wire UId="82">
+      <NameCon UId="52" Name="subfunctionStatus" />
+      <IdentCon UId="44" />
+    </Wire>
+    <Wire UId="83">
+      <IdentCon UId="45" />
+      <NameCon UId="53" Name="in1" />
+    </Wire>
+    <Wire UId="84">
+      <IdentCon UId="46" />
+      <NameCon UId="53" Name="in2" />
+    </Wire>
+    <Wire UId="85">
+      <NameCon UId="53" Name="out" />
+      <IdentCon UId="47" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Sensor simulation Machine 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Access Scope="GlobalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="GlobalData" UId="23">
+        <BooleanAttribute Name="HasQuotes" UId="24">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="25" />
+      <Component Name="SensorsSimulation" UId="26" />
+      <Token Text="." UId="27" />
+      <Component Name="Sensors" UId="28" />
+      <Token Text="." UId="29" />
+      <Component Name="Sensor24" UId="30" />
+    </Symbol>
+  </Access>
+  <Blank UId="31" />
+  <Token Text=":=" UId="32" />
+  <Blank UId="33" />
+  <Access Scope="GlobalVariable" UId="34">
+    <Symbol UId="35">
+      <Component Name="GlobalData" UId="36">
+        <BooleanAttribute Name="HasQuotes" UId="37">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="38" />
+      <Component Name="SensorsSimulation" UId="39" />
+      <Token Text="." UId="40" />
+      <Component Name="Sensors" UId="41" />
+      <Token Text="." UId="42" />
+      <Component Name="Sensor24" UId="43" />
+    </Symbol>
+  </Access>
+  <Blank UId="44" />
+  <Token Text="+" UId="45" />
+  <Blank UId="46" />
+  <Access Scope="LiteralConstant" UId="47">
+    <Constant UId="48">
+      <ConstantValue UId="50">0.1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="51" />
+  <NewLine Num="2" UId="52" />
+  <Token Text="IF" UId="53" />
+  <Blank UId="54" />
+  <Access Scope="GlobalVariable" UId="55">
+    <Symbol UId="56">
+      <Component Name="GlobalData" UId="57">
+        <BooleanAttribute Name="HasQuotes" UId="58">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="59" />
+      <Component Name="SensorsSimulation" UId="60" />
+      <Token Text="." UId="61" />
+      <Component Name="Sensors" UId="62" />
+      <Token Text="." UId="63" />
+      <Component Name="Sensor24" UId="64" />
+    </Symbol>
+  </Access>
+  <Blank UId="65" />
+  <Token Text="&gt;" UId="66" />
+  <Blank UId="67" />
+  <Access Scope="LiteralConstant" UId="68">
+    <Constant UId="69">
+      <ConstantValue UId="71">50</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="72" />
+  <Token Text="THEN" UId="73" />
+  <NewLine UId="74" />
+  <Blank Num="4" UId="75" />
+  <Access Scope="GlobalVariable" UId="76">
+    <Symbol UId="77">
+      <Component Name="GlobalData" UId="78">
+        <BooleanAttribute Name="HasQuotes" UId="79">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="80" />
+      <Component Name="SensorsSimulation" UId="81" />
+      <Token Text="." UId="82" />
+      <Component Name="Sensors" UId="83" />
+      <Token Text="." UId="84" />
+      <Component Name="Sensor24" UId="85" />
+    </Symbol>
+  </Access>
+  <Blank UId="86" />
+  <Token Text=":=" UId="87" />
+  <Blank UId="88" />
+  <Access Scope="LiteralConstant" UId="89">
+    <Constant UId="90">
+      <ConstantValue UId="92">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="93" />
+  <NewLine UId="94" />
+  <Token Text="END_IF" UId="95" />
+  <Token Text=";" UId="96" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Sensor simulation Machine 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State21" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>7</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>7</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="RndDIntStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>7</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>10</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>20</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="StatesSimulation" />
+        <Component Name="States" />
+        <Component Name="State22" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="LGF_Error" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>8</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="LGF_Status" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>8</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="RndDIntStatus" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>8</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Call UId="33">
+      <CallInfo Name="LGF_RandomRange_DInt" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="DInt" />
+        <Parameter Name="maxValue" Section="Input" Type="DInt" />
+        <Parameter Name="Ret_Val" Section="Return" Type="DInt" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+    <Call UId="34">
+      <CallInfo Name="LGF_RandomRange_DInt" BlockType="FC">
+        <Parameter Name="minValue" Section="Input" Type="DInt" />
+        <Parameter Name="maxValue" Section="Input" Type="DInt" />
+        <Parameter Name="Ret_Val" Section="Return" Type="DInt" />
+        <Parameter Name="error" Section="Output" Type="Bool" />
+        <Parameter Name="status" Section="Output" Type="Word" />
+        <Parameter Name="subfunctionStatus" Section="Output" Type="Word" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="33" Name="minValue" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="maxValue" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="33" Name="eno" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="33" Name="Ret_Val" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="33" Name="error" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="33" Name="status" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="33" Name="subfunctionStatus" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="27" />
+      <NameCon UId="34" Name="minValue" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="maxValue" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="Ret_Val" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="34" Name="error" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="34" Name="status" />
+      <IdentCon UId="31" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="34" Name="subfunctionStatus" />
+      <IdentCon UId="32" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Status simulation Machine 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="21" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="22" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

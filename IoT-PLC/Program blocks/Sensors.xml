@@ -1,0 +1,1736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="GenericSensor11" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor12" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor13" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor21" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor22" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst11" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst12" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst13" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst21" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst22" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen01" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen02" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen03" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen04" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="Sensor11" Datatype="Real" />
+    <Member Name="Sensor12" Datatype="Real" />
+    <Member Name="Sensor13" Datatype="Real" />
+    <Member Name="Sensor21" Datatype="Real" />
+    <Member Name="Sensor22" Datatype="Real" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>Sensors</Name>
+      <Namespace />
+      <Number>4</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="tpGen01" UId="23" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="24">
+    <Instruction UId="25">
+      <Token Text="(" UId="26" />
+      <Parameter Name="IN" UId="27">
+        <Token Text=":=" UId="28" />
+        <Token Text="NOT" UId="29" />
+        <Blank UId="30" />
+        <Access Scope="LocalVariable" UId="31">
+          <Symbol UId="32">
+            <Component Name="tpGen02" UId="33" />
+            <Token Text="." UId="34" />
+            <Component Name="Q" UId="35" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="36" />
+      <NewLine UId="37" />
+      <Blank Num="9" UId="38" />
+      <Parameter Name="PT" UId="39">
+        <Token Text=":=" UId="40" />
+        <Access Scope="TypedConstant" UId="41">
+          <Constant UId="42">
+            <ConstantValue UId="43">T#1S</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="44" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="45" />
+  <NewLine Num="2" UId="46" />
+  <Access Scope="LocalVariable" UId="47">
+    <Symbol UId="48">
+      <Component Name="tpGen02" UId="49" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="50">
+    <Instruction UId="51">
+      <Token Text="(" UId="52" />
+      <Parameter Name="IN" UId="53">
+        <Token Text=":=" UId="54" />
+        <Token Text="NOT" UId="55" />
+        <Blank UId="56" />
+        <Access Scope="LocalVariable" UId="57">
+          <Symbol UId="58">
+            <Component Name="tpGen01" UId="59" />
+            <Token Text="." UId="60" />
+            <Component Name="Q" UId="61" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="62" />
+      <NewLine UId="63" />
+      <Blank Num="9" UId="64" />
+      <Parameter Name="PT" UId="65">
+        <Token Text=":=" UId="66" />
+        <Access Scope="TypedConstant" UId="67">
+          <Constant UId="68">
+            <ConstantValue UId="69">T#50MS</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="70" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="71" />
+  <NewLine UId="72" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Define how often sensors are polled and mqtt data sent.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Generator for data publish Machine 1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="tpGen03" UId="23" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="24">
+    <Instruction UId="25">
+      <Token Text="(" UId="26" />
+      <Parameter Name="IN" UId="27">
+        <Blank UId="28" />
+        <Token Text=":=" UId="29" />
+        <Blank UId="30" />
+        <Token Text="NOT" UId="31" />
+        <Blank UId="32" />
+        <Access Scope="LocalVariable" UId="33">
+          <Symbol UId="34">
+            <Component Name="tpGen04" UId="35" />
+            <Token Text="." UId="36" />
+            <Component Name="Q" UId="37" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="38" />
+      <NewLine UId="39" />
+      <Blank Num="9" UId="40" />
+      <Parameter Name="PT" UId="41">
+        <Blank UId="42" />
+        <Token Text=":=" UId="43" />
+        <Blank UId="44" />
+        <Access Scope="TypedConstant" UId="45">
+          <Constant UId="46">
+            <ConstantValue UId="47">T#3S</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="48" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="49" />
+  <NewLine Num="2" UId="50" />
+  <Access Scope="LocalVariable" UId="51">
+    <Symbol UId="52">
+      <Component Name="tpGen04" UId="53" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="54">
+    <Instruction UId="55">
+      <Token Text="(" UId="56" />
+      <Parameter Name="IN" UId="57">
+        <Blank UId="58" />
+        <Token Text=":=" UId="59" />
+        <Blank UId="60" />
+        <Token Text="NOT" UId="61" />
+        <Blank UId="62" />
+        <Access Scope="LocalVariable" UId="63">
+          <Symbol UId="64">
+            <Component Name="tpGen03" UId="65" />
+            <Token Text="." UId="66" />
+            <Component Name="Q" UId="67" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="68" />
+      <NewLine UId="69" />
+      <Blank Num="9" UId="70" />
+      <Parameter Name="PT" UId="71">
+        <Blank UId="72" />
+        <Token Text=":=" UId="73" />
+        <Blank UId="74" />
+        <Access Scope="TypedConstant" UId="75">
+          <Constant UId="76">
+            <ConstantValue UId="77">T#50MS</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="78" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="79" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Generator for data publish Machine 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>false</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor11" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="VibSensor01" />
+        <Component Name="Vibration Acceleration - Vibration Acceleration RMS a-RMS X" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Sensor11" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Sensor001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Sensor11" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="GenericSensor11" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="GenericSensor11" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="37">
+      <Constant>
+        <ConstantValue>WSTRING#'Client01'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="38">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="GenericSensor11" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Part Name="SEL" Version="1.4" UId="40">
+      <TemplateValue Name="value_type" Type="Type">Real</TemplateValue>
+    </Part>
+    <Call UId="41">
+      <CallInfo Name="GenericSensor" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="42">
+          <Component Name="GenericSensor11" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="SensorName" Section="Input" Type="String" />
+        <Parameter Name="SensorValue" Section="Input" Type="Real" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="43">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="44">
+          <Component Name="PubJsonMqttInst11" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="48">
+      <Powerrail />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="40" Name="G" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="40" Name="IN0" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="IN1" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="40" Name="eno" />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="40" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="LineName" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="26" />
+      <NameCon UId="41" Name="MachineName" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="27" />
+      <NameCon UId="41" Name="SensorName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="28" />
+      <NameCon UId="41" Name="SensorValue" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="29" />
+      <NameCon UId="41" Name="Timestamp" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="Enable" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="41" Name="eno" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="MqttTopic" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="41" Name="MqttJsonPayload" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="41" Name="PublishMqtt" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="HostAddress" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="HostPort" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="33" />
+      <NameCon UId="43" Name="UserName" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="34" />
+      <NameCon UId="43" Name="UserPassword" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="36" />
+      <NameCon UId="43" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="37" />
+      <NameCon UId="43" Name="ClientId" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="38" />
+      <NameCon UId="43" Name="ConnId" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="39" />
+      <NameCon UId="43" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SELECTOR defines if simulated sensor value or real IO-Link sensor value is evaluated and published by MQTT.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 1 / Sensor 001</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>false</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor12" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="VibSensor02" />
+        <Component Name="Vibration Acceleration - Vibration Acceleration RMS a-RMS X" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Sensor12" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Sensor002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Sensor12" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="GenericSensor12" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="GenericSensor12" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="37">
+      <Constant>
+        <ConstantValue>WSTRING#'Client02'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="38">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="GenericSensor12" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Part Name="SEL" Version="1.4" UId="40">
+      <TemplateValue Name="value_type" Type="Type">Real</TemplateValue>
+    </Part>
+    <Call UId="41">
+      <CallInfo Name="GenericSensor" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="42">
+          <Component Name="GenericSensor12" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="SensorName" Section="Input" Type="String" />
+        <Parameter Name="SensorValue" Section="Input" Type="Real" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="43">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="44">
+          <Component Name="PubJsonMqttInst12" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="48">
+      <Powerrail />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="40" Name="G" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="40" Name="IN0" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="IN1" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="40" Name="eno" />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="40" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="LineName" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="26" />
+      <NameCon UId="41" Name="MachineName" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="27" />
+      <NameCon UId="41" Name="SensorName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="28" />
+      <NameCon UId="41" Name="SensorValue" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="29" />
+      <NameCon UId="41" Name="Timestamp" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="Enable" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="41" Name="eno" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="MqttTopic" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="41" Name="MqttJsonPayload" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="41" Name="PublishMqtt" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="HostAddress" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="HostPort" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="33" />
+      <NameCon UId="43" Name="UserName" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="34" />
+      <NameCon UId="43" Name="UserPassword" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="36" />
+      <NameCon UId="43" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="37" />
+      <NameCon UId="43" Name="ClientId" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="38" />
+      <NameCon UId="43" Name="ConnId" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="39" />
+      <NameCon UId="43" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SELECTOR defines if simulated sensor value or real IO-Link sensor value is evaluated and published by MQTT.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 1 / Sensor 002</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>false</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor13" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="TempHumidSensor01" />
+        <Component Name="Process Data Inputs - Temperature" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Sensor13" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Sensor003'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Sensor13" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="tpGen02" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="GenericSensor13" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="GenericSensor13" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="37">
+      <Constant>
+        <ConstantValue>WSTRING#'Client03'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="38">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>3</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="GenericSensor13" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Part Name="SEL" Version="1.4" UId="40">
+      <TemplateValue Name="value_type" Type="Type">Real</TemplateValue>
+    </Part>
+    <Call UId="41">
+      <CallInfo Name="GenericSensor" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="42">
+          <Component Name="GenericSensor13" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="SensorName" Section="Input" Type="String" />
+        <Parameter Name="SensorValue" Section="Input" Type="Real" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="43">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="44">
+          <Component Name="PubJsonMqttInst13" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="48">
+      <Powerrail />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="40" Name="G" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="40" Name="IN0" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="IN1" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="40" Name="eno" />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="40" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="LineName" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="26" />
+      <NameCon UId="41" Name="MachineName" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="27" />
+      <NameCon UId="41" Name="SensorName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="28" />
+      <NameCon UId="41" Name="SensorValue" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="29" />
+      <NameCon UId="41" Name="Timestamp" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="Enable" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="41" Name="eno" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="MqttTopic" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="41" Name="MqttJsonPayload" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="41" Name="PublishMqtt" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="HostAddress" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="HostPort" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="33" />
+      <NameCon UId="43" Name="UserName" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="34" />
+      <NameCon UId="43" Name="UserPassword" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="36" />
+      <NameCon UId="43" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="37" />
+      <NameCon UId="43" Name="ClientId" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="38" />
+      <NameCon UId="43" Name="ConnId" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="39" />
+      <NameCon UId="43" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SELECTOR defines if simulated sensor value or real IO-Link sensor value is evaluated and published by MQTT.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 1 / Sensor 003</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>false</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor21" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="TempHumidSensor01" />
+        <Component Name="Process Data Inputs - Humidity" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Sensor21" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Sensor001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Sensor21" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="tpGen04" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="GenericSensor21" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="GenericSensor21" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="37">
+      <Constant>
+        <ConstantValue>WSTRING#'Client04'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="38">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>4</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="GenericSensor21" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Part Name="SEL" Version="1.4" UId="40">
+      <TemplateValue Name="value_type" Type="Type">Real</TemplateValue>
+    </Part>
+    <Call UId="41">
+      <CallInfo Name="GenericSensor" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="42">
+          <Component Name="GenericSensor21" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="SensorName" Section="Input" Type="String" />
+        <Parameter Name="SensorValue" Section="Input" Type="Real" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="43">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="44">
+          <Component Name="PubJsonMqttInst21" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="48">
+      <Powerrail />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="40" Name="G" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="40" Name="IN0" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="IN1" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="40" Name="eno" />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="40" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="LineName" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="26" />
+      <NameCon UId="41" Name="MachineName" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="27" />
+      <NameCon UId="41" Name="SensorName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="28" />
+      <NameCon UId="41" Name="SensorValue" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="29" />
+      <NameCon UId="41" Name="Timestamp" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="Enable" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="41" Name="eno" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="MqttTopic" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="41" Name="MqttJsonPayload" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="41" Name="PublishMqtt" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="HostAddress" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="HostPort" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="33" />
+      <NameCon UId="43" Name="UserName" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="34" />
+      <NameCon UId="43" Name="UserPassword" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="36" />
+      <NameCon UId="43" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="37" />
+      <NameCon UId="43" Name="ClientId" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="38" />
+      <NameCon UId="43" Name="ConnId" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="39" />
+      <NameCon UId="43" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SELECTOR defines if simulated sensor value or real IO-Link sensor value is evaluated and published by MQTT.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 2 / Sensor 001</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>false</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="SensorsSimulation" />
+        <Component Name="Sensors" />
+        <Component Name="Sensor22" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="AirFlowSensor01" />
+        <Component Name="Process Data In - Volumetric Flow Rate" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Sensor22" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Line001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Machine002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'Sensor002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Sensor22" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="GlobalData" />
+        <Component Name="UnixTimestamp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="tpGen04" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_host_address" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_port" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_username" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="GlobalConst_DB" />
+        <Component Name="mqtt_password" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="GenericSensor22" />
+        <Component Name="MqttTopic" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="GenericSensor22" />
+        <Component Name="PublishMqtt" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="37">
+      <Constant>
+        <ConstantValue>WSTRING#'Client05'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="38">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>5</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="GenericSensor22" />
+        <Component Name="MqttJsonPayload" />
+      </Symbol>
+    </Access>
+    <Part Name="SEL" Version="1.4" UId="40">
+      <TemplateValue Name="value_type" Type="Type">Real</TemplateValue>
+    </Part>
+    <Call UId="41">
+      <CallInfo Name="GenericSensor" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="42">
+          <Component Name="GenericSensor22" />
+        </Instance>
+        <Parameter Name="LineName" Section="Input" Type="String" />
+        <Parameter Name="MachineName" Section="Input" Type="String" />
+        <Parameter Name="SensorName" Section="Input" Type="String" />
+        <Parameter Name="SensorValue" Section="Input" Type="Real" />
+        <Parameter Name="Timestamp" Section="Input" Type="DInt" />
+        <Parameter Name="Enable" Section="Input" Type="Bool" />
+        <Parameter Name="MqttTopic" Section="Output" Type="WString[100]" />
+        <Parameter Name="MqttJsonPayload" Section="Output" Type="Array[0..5] of &quot;LStream_typeElement&quot;" />
+        <Parameter Name="PublishMqtt" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="43">
+      <CallInfo Name="PublishJsonMqtt" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="44">
+          <Component Name="PubJsonMqttInst22" />
+        </Instance>
+        <Parameter Name="HostAddress" Section="Input" Type="String" />
+        <Parameter Name="HostPort" Section="Input" Type="UInt" />
+        <Parameter Name="UserName" Section="Input" Type="WString" />
+        <Parameter Name="UserPassword" Section="Input" Type="WString[100]" />
+        <Parameter Name="MqttTopic" Section="Input" Type="WString[100]" />
+        <Parameter Name="PublishCommand" Section="Input" Type="Bool" />
+        <Parameter Name="ClientId" Section="Input" Type="WString" />
+        <Parameter Name="ConnId" Section="Input" Type="Word" />
+        <Parameter Name="JsonPayload" Section="InOut" Type="Array[*] of &quot;LStream_typeElement&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="48">
+      <Powerrail />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="40" Name="G" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="40" Name="IN0" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="IN1" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="40" Name="eno" />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="40" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="LineName" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="26" />
+      <NameCon UId="41" Name="MachineName" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="27" />
+      <NameCon UId="41" Name="SensorName" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="28" />
+      <NameCon UId="41" Name="SensorValue" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="29" />
+      <NameCon UId="41" Name="Timestamp" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="Enable" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="41" Name="eno" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="MqttTopic" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="41" Name="MqttJsonPayload" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="41" Name="PublishMqtt" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="HostAddress" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="HostPort" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="33" />
+      <NameCon UId="43" Name="UserName" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="34" />
+      <NameCon UId="43" Name="UserPassword" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="MqttTopic" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="36" />
+      <NameCon UId="43" Name="PublishCommand" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="37" />
+      <NameCon UId="43" Name="ClientId" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="38" />
+      <NameCon UId="43" Name="ConnId" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="39" />
+      <NameCon UId="43" Name="JsonPayload" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SELECTOR defines if simulated sensor value or real IO-Link sensor value is evaluated and published by MQTT.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Line 1 / Machine 2 / Sensor 002</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="26" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="27" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

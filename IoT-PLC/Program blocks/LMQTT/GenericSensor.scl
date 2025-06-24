@@ -1,0 +1,85 @@
+﻿FUNCTION_BLOCK "GenericSensor"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      LineName : String;
+      MachineName : String;
+      SensorName : String;
+      SensorValue : Real;
+      Timestamp : DInt;
+      Enable : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      MqttTopic : WString[100];   // mqtt topic
+      MqttJsonPayload { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..5] of "LStream_typeElement";   // mqtt payload as array of LStream elements
+      PublishMqtt : Bool;   // command for publish mqtt payload
+   END_VAR
+
+   VAR 
+      PayloadSerializedData { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'; S7_SetPoint := 'False'} : Array[0..5] of "LStream_typeElement" := [(2, 'LineName', (), 0), (2, 'MachineName', (), 0), (2, 'SensorName', (), 0), (3, 'SensorValue', (), 0), (3, 'Timestamp', (), 0), ((), (), (), ())];   // mqtt payload data as serialized LStream elements
+      SetParameter { S7_SetPoint := 'True'} : Bool := true;
+   END_VAR
+
+   VAR_TEMP 
+      TimestampString : String;
+      SensorValueString : String;
+      TopicString : String;
+      RetVal : Int;
+      SensorValueInt : Int;
+      Size : Int;
+   END_VAR
+
+
+BEGIN
+	IF #Enable THEN
+	    
+	    IF #SetParameter THEN
+	        #SetParameter := false;
+	        // create mqtt topic
+	        #TopicString := CONCAT(IN1 := #LineName, IN2 := #MachineName);
+	        #TopicString := INSERT(IN1 := #TopicString, IN2 := '/', P := LEN(#TopicString) - LEN(#MachineName));
+	        #TopicString := CONCAT(IN1 := #TopicString, IN2 := #SensorName);
+	        #TopicString := INSERT(IN1 := #TopicString, IN2 := '/', P := LEN(#TopicString) - LEN(#SensorName));
+	        #MqttTopic := STRING_TO_WSTRING(#TopicString);
+	    END_IF;
+	    
+	    // convert input timestamp to string
+	    VAL_STRG(IN := #Timestamp,
+	             SIZE := 10,
+	             PREC := 0,
+	             FORMAT := 0,
+	             P := 1,
+	             OUT => #TimestampString);
+	    
+	    #SensorValueInt := REAL_TO_INT(#SensorValue);
+	    #SensorValueString := INT_TO_STRING(#SensorValueInt);
+	    #Size := LEN(#SensorValueString) + 4;
+	    
+	    // convert input sensor value to string
+	    VAL_STRG(IN := #SensorValue,
+	             SIZE := #Size,
+	             PREC := 4,
+	             FORMAT := 0,
+	             P := 1,
+	             OUT => #SensorValueString);
+	    
+	    
+	    #PayloadSerializedData[0].value := #LineName;
+	    #PayloadSerializedData[1].value := #MachineName;
+	    #PayloadSerializedData[2].value := #SensorName;
+	    #PayloadSerializedData[3].value := #SensorValueString;
+	    #PayloadSerializedData[4].value := #TimestampString;
+	    
+	    #RetVal := MOVE_BLK_VARIANT(SRC := #PayloadSerializedData,
+	                                COUNT := 6,
+	                                SRC_INDEX := 0,
+	                                DEST_INDEX := 0,
+	                                DEST => #MqttJsonPayload);
+	    
+	    #PublishMqtt := true;
+	ELSE
+	    #PublishMqtt := false;
+	END_IF;
+END_FUNCTION_BLOCK
+

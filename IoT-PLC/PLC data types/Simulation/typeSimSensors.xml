@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Sensors" Datatype="Struct">
+      <Member Name="Sensor11" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 001 / Sensor 001</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor12" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 001 / Sensor 002</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor13" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 001 / Sensor 003</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor14" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 001 / Sensor 004</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor21" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 002 / Sensor 001</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor22" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 002 / Sensor 002</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor23" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 002 / Sensor 003</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Sensor24" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 002 / Sensor 004</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>typeSimSensors</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

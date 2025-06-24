@@ -1,0 +1,23 @@
+﻿ORGANIZATION_BLOCK "TimeStampGenerator"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_TEMP 
+      RetVal : Int;
+      TimestampDTL {InstructionName := 'DTL'; LibVersion := '1.0'} : DTL;
+      UnixTime : DInt;
+      UnixTimeError : Bool;
+      UnixTimeStatus : Word;
+   END_VAR
+
+
+BEGIN
+	// generate Unix timestamp with 1ms resolutionm
+	
+	#RetVal := RD_LOC_T(#TimestampDTL);
+	#UnixTime := "LGF_DTLToUnixTime"(timeDTL := #TimestampDTL,
+	                                 error => #UnixTimeError,
+	                                 status => #UnixTimeStatus);
+	
+	"GlobalData".UnixTimestamp := #UnixTime;
+END_ORGANIZATION_BLOCK
+

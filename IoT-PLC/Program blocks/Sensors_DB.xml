@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.InstanceDB ID="0">
+    <AttributeList>
+      <InstanceOfName>Sensors</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="GenericSensor11" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor12" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor13" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor21" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="GenericSensor22" Datatype="&quot;GenericSensor&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst11" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst12" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst13" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst21" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="PubJsonMqttInst22" Datatype="&quot;PublishJsonMqtt&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen01" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen02" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen03" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="tpGen04" Datatype="TP_TIME" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>Sensors_DB</Name>
+      <Namespace />
+      <Number>4</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.InstanceDB>
+</Document>

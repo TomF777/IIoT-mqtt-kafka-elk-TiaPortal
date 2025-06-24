@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Vibration Acceleration - Vibration Acceleration RMS a-RMS X" Datatype="Real" />
+    <Member Name="Vibration Acceleration - Vibration Acceleration RMS a-RMS Y" Datatype="Real" />
+    <Member Name="Vibration Acceleration - Vibration Acceleration RMS a-RMS Z" Datatype="Real" />
+    <Member Name="Vibration Acceleration - Contact Temperature Contact Temperature" Datatype="Real" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm a-RMS Magnitude Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm a-RMS Magnitude Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm a-RMS Z Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm a-RMS Z Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm a-RMS Y Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm a-RMS Y Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm a-RMS X Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm a-RMS X Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm v-RMS Magnitude Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm v-RMS Magnitude Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm v-RMS Z Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm v-RMS Z Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm v-RMS Y Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm v-RMS Y Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Main-Alarm v-RMS X Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Pre-Alarm v-RMS X Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_1" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_2" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Vibration Severity Zone D" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Vibration Severity Zone C" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Vibration Severity Zone B" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Vibration Severity Zone A" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_3" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_4" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_5" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_6" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_7" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_8" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Reserved_9" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Contact Temperature Upper Alarm Status" Datatype="Bool" />
+    <Member Name="Vibration Acceleration - Status Bits Contact Temperature Lower Alarm Status" Datatype="Bool" />
+    <Member Name="Reserved Byte" Datatype="Bool" />
+    <Member Name="Reserved Byte_1" Datatype="Bool" />
+    <Member Name="Reserved Byte_2" Datatype="Bool" />
+    <Member Name="Reserved Byte_3" Datatype="Bool" />
+    <Member Name="Reserved Byte_4" Datatype="Bool" />
+    <Member Name="Reserved Byte_5" Datatype="Bool" />
+    <Member Name="Reserved Byte_6" Datatype="Bool" />
+    <Member Name="Reserved Byte_7" Datatype="Bool" />
+    <Member Name="Reserved Byte_8" Datatype="Bool" />
+    <Member Name="Reserved Byte_9" Datatype="Bool" />
+    <Member Name="Reserved Byte_10" Datatype="Bool" />
+    <Member Name="Reserved Byte_11" Datatype="Bool" />
+    <Member Name="Port qualifier" Datatype="Byte" />
+  </Section>
+</Sections></Interface>
+      <Name>PII - BCM R15E-001-DI00-01,5-S4</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

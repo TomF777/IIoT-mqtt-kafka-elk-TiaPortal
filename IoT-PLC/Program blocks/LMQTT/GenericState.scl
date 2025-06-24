@@ -1,0 +1,84 @@
+﻿FUNCTION_BLOCK "GenericState"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      LineName : String;
+      MachineName : String;
+      StateName : String;
+      StateValue : UInt;
+      Timestamp : DInt;
+      Enable : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      MqttTopic : WString[100];   // mqtt topic
+      MqttJsonPayload { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..5] of "LStream_typeElement";   // mqtt payload as array of LStream elements
+      PublishMqtt : Bool;   // command for publish mqtt payload
+   END_VAR
+
+   VAR 
+      PayloadSerializedData { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'; S7_SetPoint := 'False'} : Array[0..5] of "LStream_typeElement" := [(2, 'LineName', (), 0), (2, 'MachineName', (), 0), (2, 'StateName', (), 0), (3, 'StateValue', (), 0), (3, 'Timestamp', (), 0), ((), (), (), ())];   // mqtt payload data as serialized LStream elements
+      SetParameter { S7_SetPoint := 'True'} : Bool := true;
+   END_VAR
+
+   VAR_TEMP 
+      TimestampString : String;
+      StateValueString : String;
+      TopicString : String;
+      RetVal : Int;
+      SensorValueInt : Int;
+      Size : Int;
+   END_VAR
+
+
+BEGIN
+	IF #Enable THEN
+	    
+	    IF #SetParameter THEN
+	        #SetParameter := false;
+	        // create mqtt topic
+	        #TopicString := CONCAT(IN1 := #LineName, IN2 := #MachineName);
+	        #TopicString := INSERT(IN1 := #TopicString, IN2 := '/', P := LEN(#TopicString) - LEN(#MachineName));
+	        #TopicString := CONCAT(IN1 := #TopicString, IN2 := #StateName);
+	        #TopicString := INSERT(IN1 := #TopicString, IN2 := '/', P := LEN(#TopicString) - LEN(#StateName));
+	        #MqttTopic := STRING_TO_WSTRING(#TopicString);
+	    END_IF;
+	    
+	    // convert input timestamp to string
+	    VAL_STRG(IN := #Timestamp,
+	             SIZE := 10,
+	             PREC := 0,
+	             FORMAT := 0,
+	             P := 1,
+	             OUT => #TimestampString);
+	    
+	    #StateValueString := UINT_TO_STRING(#StateValue);
+	    #Size := LEN(#StateValueString);
+	    
+	    // convert input state value to string
+	    VAL_STRG(IN := #StateValue,
+	             SIZE := #Size,
+	             PREC := 0,
+	             FORMAT := 0,
+	             P := 1,
+	             OUT => #StateValueString);
+	    
+	    
+	    #PayloadSerializedData[0].value := #LineName;
+	    #PayloadSerializedData[1].value := #MachineName;
+	    #PayloadSerializedData[2].value := #StateName;
+	    #PayloadSerializedData[3].value := #StateValueString;
+	    #PayloadSerializedData[4].value := #TimestampString;
+	    
+	    #RetVal := MOVE_BLK_VARIANT(SRC := #PayloadSerializedData,
+	                                COUNT := 6,
+	                                SRC_INDEX := 0,
+	                                DEST_INDEX := 0,
+	                                DEST => #MqttJsonPayload);
+	    
+	    #PublishMqtt := true;
+	ELSE
+	    #PublishMqtt := false;
+	END_IF;
+END_FUNCTION_BLOCK
+

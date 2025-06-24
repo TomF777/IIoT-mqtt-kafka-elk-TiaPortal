@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.InstanceDB ID="0">
+    <AttributeList>
+      <HeaderAuthor>Siemens Industry Online Support</HeaderAuthor>
+      <HeaderFamily>LMQTT</HeaderFamily>
+      <HeaderVersion>4.0</HeaderVersion>
+      <InstanceOfName>LMQTT_Client</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="enable" Datatype="Bool" />
+    <Member Name="publish" Datatype="Bool" />
+    <Member Name="subscribe" Datatype="Bool" />
+    <Member Name="unsubscribe" Datatype="Bool" />
+    <Member Name="qos" Datatype="USInt" />
+    <Member Name="retain" Datatype="Bool" />
+    <Member Name="publishMsgLen" Datatype="UDInt" />
+    <Member Name="willMsgLen" Datatype="UInt" />
+    <Member Name="timeOut" Datatype="Time" />
+  </Section>
+  <Section Name="Output">
+    <Member Name="valid" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="done" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="busy" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="error" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="status" Datatype="Word">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="diagnostics" Datatype="&quot;typeDiagnostics&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="receivedMsgStatus" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="receivedMsgDataLen" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+  <Section Name="InOut">
+    <Member Name="connParam" Datatype="&quot;LMQTT_typeConnParam&quot;" />
+    <Member Name="clientIdentifier" Datatype="WString" />
+    <Member Name="username" Datatype="WString" />
+    <Member Name="password" Datatype="WString" />
+    <Member Name="willtopic" Datatype="WString" />
+    <Member Name="willMsgPayload" Datatype="Array[*] of Byte" />
+    <Member Name="mqttTopic" Datatype="WString" />
+    <Member Name="publishMsgPayload" Datatype="Array[*] of Byte" />
+    <Member Name="receivedTopic" Datatype="WString" />
+    <Member Name="receivedMsgPayload" Datatype="Array[*] of Byte" />
+  </Section>
+  <Section Name="Static">
+    <Member Name="statEnableOld" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statValid" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statBusy" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statError" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statErrorUserCleared" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statErrorAutoCleared" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statStatus" Datatype="Word">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statDone" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgStatus" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgDataLen" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubfunctionStatus" Datatype="Word">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statFBErrorState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statFBState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statMqttConnectState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statMqttCommandState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statDisablingCompleted" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statEmptyDiagnostics" Datatype="&quot;typeDiagnostics&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statConnParam" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Member Name="isQDN" Datatype="Bool" />
+      <Member Name="paramQDN" Datatype="TCON_QDN_SEC" Version="1.0" />
+      <Member Name="paramIP" Datatype="TCON_IP_V4_SEC" Version="1.0" />
+    </Member>
+    <Member Name="instTsendC" Datatype="TSEND_C" Version="3.2">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="instTrcv" Datatype="TRCV" Version="4.0">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSendBuffer" Datatype="Array[0..8191] of Byte">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvBuffer" Datatype="Array[0..1459] of Byte">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishOld" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubscribeOld" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUnsubscribeOld" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statTsendcReq" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statTsendcEnable" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statTsendcLen" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statEnableTimerCommandWatchdog" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="instTimerCommandWatchdog" Datatype="IEC_TIMER" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statEnableMqttKeepAliveTimer" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statMqttKeepAliveUsed" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statMqttKeepAliveTime" Datatype="Time">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="instMqttKeepAliveTimer" Datatype="IEC_TIMER" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSendBufferPos" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPaketHeaderEncodeDone" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSendPaketTotalRemLen" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statEncodedRemPaketLenAsByte" Datatype="Byte">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUsernameLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPasswordLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillTopicLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statClientIdLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillQos" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillRetain" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillMessageCnt" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statClientIdPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statClientIdEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillMessagePos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillMessageEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillTopicPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statWillTopicEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUserNamePos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUserNameEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPasswordPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPasswordEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPaketId" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishTopicLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishQos" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishMessageCnt" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishTopicEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishTopicPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPaketIdEncoded" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishEncodeMessageState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPublishMessagePos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubscribeQos" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubscribeQosEncoded" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubscribeTopicPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubscribeTopicEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSubscribeTopicLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUnsubscribeTopicPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUnsubscribeTopicEncodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statUnsubscribeTopicLenUtf8Encoded" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgQoS" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgTotalLen" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgTopicLen" Datatype="UInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgPayloadLen" Datatype="UDInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgPaketId" Datatype="Word">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgTopicPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgPayloadPos" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgDecodeState" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statRcvMsgInternalStatus" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statMqttPubRecRcv" Datatype="USInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statSendPubAckMsg" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statPubRecReady" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statCommandInputOld" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="statCommandInputBackup" Datatype="Byte">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>LMQTT_Client_DB</Name>
+      <Namespace />
+      <Number>1</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.InstanceDB>
+</Document>

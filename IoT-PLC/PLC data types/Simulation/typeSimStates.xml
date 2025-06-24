@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="States" Datatype="Struct">
+      <Member Name="State11" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 1 / State 1</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State12" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 1 / State 2</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State13" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 1 / State 3</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State14" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 1 / State 4</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State21" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 2 / State 1</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State22" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 2 / State 2</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State23" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 2 / State 3</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="State24" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="en-US">Machine 2 / State 4</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>typeSimStates</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>
